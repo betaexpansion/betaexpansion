@@ -1,0 +1,9 @@
+bin
+jars
+src
+cleansrc
+
+*.pyc
+
+mcp/logs
+mcp/temp
