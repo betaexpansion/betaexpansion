@@ -105,8 +105,8 @@ public class BERecipes {
             Item.egg
         });
 		
-        ModLoader.AddRecipe(new ItemStack(BEBlocks.weakThatch, 16), new Object[] {
-            "RR", "RR", Character.valueOf('R'), BEBlocks.rushes
+        ModLoader.AddRecipe(new ItemStack(BEBlocks.weakThatch, 4), new Object[] {
+            "RR", "RR", Character.valueOf('R'), BEItems.rushStock
  });
         
 ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
@@ -123,6 +123,10 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
 
         ModLoader.AddRecipe(new ItemStack(BEItems.pillow, 1), new Object[] {"FF",
         "FF", 'F', Item.feather});
+
+        CraftingManager.getInstance().addRecipe(new ItemStack(Item.bed, 1), new Object[] {
+            "P##", "XIX", Character.valueOf('#'), Block.cloth, Character.valueOf('X'), Block.planks
+        , 'P', BEItems.pillow, 'I', Item.ingotIron});
 
 		if (BetaExpansion.debug){
 			System.out.println("Loading betaexpansion debug recipes...");

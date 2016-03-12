@@ -28,14 +28,22 @@ public class BlockWaterPlant extends ModBlock {
     @Override
     public void harvestBlock(World world, EntityPlayer entityplayer, int i, int j, int k, int l)
     {
-    	if (entityplayer.inventory.getCurrentItem() == null){
-    		return;
-    	}
-    	else if ((entityplayer.inventory.getCurrentItem().getItem() instanceof ItemSpade && !Config.NEED_SPADE_FOR_FLOWERS) || 
-    		entityplayer.inventory.getCurrentItem().getItem() instanceof ItemTrowel){
+    	if (entityplayer.inventory.getCurrentItem() != null && ((entityplayer.inventory.getCurrentItem().getItem() instanceof ItemSpade && !Config.NEED_SPADE_FOR_FLOWERS) || 
+    		entityplayer.inventory.getCurrentItem().getItem() instanceof ItemTrowel)){
             	entityplayer.addStat(StatList.mineBlockStatArray[blockID], 1);
         		dropBlockAsItem(world, i, j, k, l);
-    	}
+    	} else if (blockID == BEBlocks.rushes.blockID){
+            float f1 = 0.7F;
+            float f2 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+            float f3 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+            float f4 = world.rand.nextFloat() * f1 + (1.0F - f1) * 0.5F;
+            EntityItem entityitem = new EntityItem(world, (float)i + f2, (float)j + f3, 
+                                                  (float)k + f4, 
+                                                   new ItemStack(BEItems.rushStock, 
+                                                                 world.rand.nextInt(4) + 1));
+            entityitem.delayBeforeCanPickup = 10;
+            world.entityJoinedWorld(entityitem);
+        }
     }
 
     public void onNeighborBlockChange(World world, int i, int j, int k, int l)

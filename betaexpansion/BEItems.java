@@ -37,6 +37,8 @@ public class BEItems {
 
     public static ModItem pillow;
 
+    public static ModItem rushStock;
+
 	public static void init(){
 		System.out.println(Ansi.WHITE+"Loading betaexpansion items..."+Ansi.RESET);
 		
@@ -72,6 +74,8 @@ public class BEItems {
 		spyglass = new ItemSpyglass(20 + offset, 19, 2, "Spyglass");
 		
         pillow = new ModItem(21 + offset, 0, 0, "Pillow");
+
+        rushStock = new ModItem(22 + offset, 0, 0, "Rush Stock");
 
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);
 	}
