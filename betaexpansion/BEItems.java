@@ -34,7 +34,9 @@ public class BEItems {
 	public static ItemModFood popcorn;
 	
 	public static ItemSpyglass spyglass;
-	
+
+    public static ModItem pillow;
+
 	public static void init(){
 		System.out.println(Ansi.WHITE+"Loading betaexpansion items..."+Ansi.RESET);
 		
@@ -69,6 +71,8 @@ public class BEItems {
 		
 		spyglass = new ItemSpyglass(20 + offset, 19, 2, "Spyglass");
 		
+        pillow = new ModItem(21 + offset, 0, 0, "Pillow");
+
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);
 	}
 
