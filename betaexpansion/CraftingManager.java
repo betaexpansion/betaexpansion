@@ -202,8 +202,8 @@ public class CraftingManager
             "S", "P", Character.valueOf('S'), Item.slimeBall, Character.valueOf('P'), Block.pistonBase
         });
         addRecipe(new ItemStack(Item.bed, 1), new Object[] {
-            "###", "XXX", Character.valueOf('#'), Block.cloth, Character.valueOf('X'), Block.planks
-        });
+            "P##", "XIX", Character.valueOf('#'), Block.cloth, Character.valueOf('X'), Block.planks
+        , 'P', BEItems.pillow, 'I', Item.ingotIron});
         Collections.sort(recipes, new RecipeSorter(this));
         System.out.println((new StringBuilder()).append(recipes.size()).append(" recipes").toString());
     }
