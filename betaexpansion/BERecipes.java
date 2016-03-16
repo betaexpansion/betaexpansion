@@ -117,6 +117,8 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
 		
 		ModLoader.AddShapelessRecipe(new ItemStack(BEBlocks.appleSapling), new Object[]{Item.appleRed});
 		
+        ModLoader.AddShapelessRecipe(new ItemStack(Item.silk, 4), new Object[]{Block.cloth});
+		
 		ModLoader.AddRecipe(new ItemStack(BEItems.spyglass, 1), new Object[] {"IGI","W W","IGI", 'W', Block.planks, 'I', Item.ingotIron, 'G', Block.glass});
 		
         ModLoader.AddRecipe(new ItemStack(BEBlocks.ropeLadder, 4), new Object[] {"S S","SWS","S S", 'S', Item.silk, 'W', Item.stick});
