@@ -66,6 +66,10 @@ public class BEBlocks {
 
     public static BlockThatch weakThatch;
     public static BlockThatch thatch;
+
+    public static BlockNet net;
+
+    public static BlockQuicksand quickSand;
 	
 	public static void init(){
 		System.out.println(Ansi.BLACK+"Loading betaexpansion blocks..."+Ansi.RESET);
@@ -169,6 +173,10 @@ public class BEBlocks {
 		
         weakThatch = new BlockThatch(44, Util.tex(17, 6), "Rush Thatch", true);
         thatch = new BlockThatch(45, Util.tex(17, 6), "Wheat Thatch", false);
+
+        net = new BlockNet(46, Util.tex(18, 6), "Net");
+
+        quickSand = new BlockQuicksand(47, Util.tex(20, 7), "Quicksand");
 
 		BlockStone.texInit();
 		Item.itemsList[Block.stone.blockID] = new ItemStone(Block.stone.blockID - 256);

@@ -133,9 +133,12 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
             "P##", "XIX", Character.valueOf('#'), Block.cloth, Character.valueOf('X'), Block.planks
         , 'P', BEItems.pillow, 'I', Item.ingotIron});
 
+        ModLoader.AddRecipe(new ItemStack(BEBlocks.net, 2), new Object[]{
+        "R R", " R ", "R R", 'R', BEItems.rushStock});
+
 		if (BetaExpansion.debug){
 			System.out.println("Loading betaexpansion debug recipes...");
-			ModLoader.AddShapelessRecipe(new ItemStack(Item.bow, 1), new Object[] {Block.dirt});
+			ModLoader.AddShapelessRecipe(new ItemStack(BEBlocks.quickSand, 64), new Object[] {Block.dirt});
 		}
 		
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);
