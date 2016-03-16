@@ -42,4 +42,19 @@ public class BlockCloth extends Block
     {
         return ~i & 0xf;
     }
+    
+    public boolean blockActivated(World world, int i, int j, int k, EntityPlayer entityplayer)
+    {
+        if (entityplayer.inventory.getCurrentItem() != null &&
+            entityplayer.inventory.getCurrentItem().itemID ==
+            Item.dyePowder.shiftedIndex){
+            world.setBlockMetadataWithNotify(i, j, k, 
+                                             0x0f -
+                                             entityplayer.inventory.getCurrentItem().
+                                             getItemDamage());
+            entityplayer.inventory.decrStackSize(entityplayer.inventory.currentItem, 1); 
+            return true;
+        }
+        return false;
+    }
 }
