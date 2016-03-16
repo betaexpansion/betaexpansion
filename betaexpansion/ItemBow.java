@@ -17,6 +17,7 @@ public class ItemBow extends Item
     {
         super(i);
         maxStackSize = 1;
+        setMaxDamage(128);
     }
 
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
@@ -36,6 +37,7 @@ public class ItemBow extends Item
                 world.entityJoinedWorld(new EntityDart(world, entityplayer));
             }
         }
+        itemstack.damageItem(1, entityplayer);
         return itemstack;
     }
 }
