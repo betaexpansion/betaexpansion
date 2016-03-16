@@ -130,7 +130,7 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
 
 		if (BetaExpansion.debug){
 			System.out.println("Loading betaexpansion debug recipes...");
-			ModLoader.AddShapelessRecipe(new ItemStack(BEItems.pillow, 64), new Object[] {Block.dirt});
+			ModLoader.AddShapelessRecipe(new ItemStack(Item.arrow, 64), new Object[] {Block.dirt});
 		}
 		
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);

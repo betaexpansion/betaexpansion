@@ -272,6 +272,7 @@ public class EntityProjectile extends Entity
         nbttagcompound.setByte("inData", (byte)field_28019_h);
         nbttagcompound.setByte("shake", (byte)arrowShake);
         nbttagcompound.setByte("inGround", (byte)(inGround ? 1 : 0));
+        nbttagcompound.setCompoundTag("item", item.writeToNBT(new NBTTagCompound()));
     }
 
     public void readEntityFromNBT(NBTTagCompound nbttagcompound)
@@ -283,6 +284,7 @@ public class EntityProjectile extends Entity
         field_28019_h = nbttagcompound.getByte("inData") & 0xff;
         arrowShake = nbttagcompound.getByte("shake") & 0xff;
         inGround = nbttagcompound.getByte("inGround") == 1;
+        item = new ItemStack(nbttagcompound.getCompoundTag("item"));
     }
 
     public void onCollideWithPlayer(EntityPlayer entityplayer)
@@ -291,7 +293,7 @@ public class EntityProjectile extends Entity
         {
             return;
         }
-        if(inGround && arrowShake <= 0 && entityplayer.inventory.addItemStackToInventory(new ItemStack(Item.arrow, 1)))
+        if(inGround && item != null && arrowShake <= 0 && entityplayer.inventory.addItemStackToInventory(item))
         {
             worldObj.playSoundAtEntity(this, "random.pop", 0.2F, ((rand.nextFloat() - rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
             entityplayer.onItemPickup(this, 1);
@@ -305,6 +307,8 @@ public class EntityProjectile extends Entity
     }
 
     private int damage = 4;
+
+    public ItemStack item;
 
     private int xTile;
     private int yTile;

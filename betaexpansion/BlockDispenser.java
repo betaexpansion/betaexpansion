@@ -157,8 +157,8 @@ public class BlockDispenser extends BlockContainer
                 if(itemstack.itemID == Item.arrow.shiftedIndex)
                 {
                     EntityArrow entityarrow = new EntityArrow(world, d, d1, d2);
-                    ((EntityArrow)entityarrow).setArrowHeading(i1, 0.10000000149011611D, j1, 1.1F, 6F);
-                    ((EntityArrow)entityarrow).doesArrowBelongToPlayer = true;
+                    ((EntityArrow)entityarrow).setProjectileHeading(i1, 0.10000000149011611D, j1, 1.1F, 6F);
+                    ((EntityArrow)entityarrow).item = new ItemStack(Item.arrow, 1);
                     world.entityJoinedWorld(entityarrow);
                     world.func_28106_e(1002, i, j, k, 0);
                 } else
