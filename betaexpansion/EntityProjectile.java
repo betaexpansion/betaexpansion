@@ -272,7 +272,9 @@ public class EntityProjectile extends Entity
         nbttagcompound.setByte("inData", (byte)field_28019_h);
         nbttagcompound.setByte("shake", (byte)arrowShake);
         nbttagcompound.setByte("inGround", (byte)(inGround ? 1 : 0));
-        nbttagcompound.setCompoundTag("item", item.writeToNBT(new NBTTagCompound()));
+        if (item != null){
+            nbttagcompound.setCompoundTag("item", item.writeToNBT(new NBTTagCompound()));
+        }
     }
 
     public void readEntityFromNBT(NBTTagCompound nbttagcompound)
@@ -284,7 +286,11 @@ public class EntityProjectile extends Entity
         field_28019_h = nbttagcompound.getByte("inData") & 0xff;
         arrowShake = nbttagcompound.getByte("shake") & 0xff;
         inGround = nbttagcompound.getByte("inGround") == 1;
-        item = new ItemStack(nbttagcompound.getCompoundTag("item"));
+        if (nbttagcompound.hasKey("item")){
+            item = new ItemStack(nbttagcompound.getCompoundTag("item"));
+        } else{
+            item = null;
+        }
     }
 
     public void onCollideWithPlayer(EntityPlayer entityplayer)
@@ -306,7 +312,7 @@ public class EntityProjectile extends Entity
         return 0.0F;
     }
 
-    private int damage = 4;
+    public int damage = 4;
 
     public ItemStack item;
 

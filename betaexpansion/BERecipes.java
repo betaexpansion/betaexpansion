@@ -124,13 +124,16 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
         ModLoader.AddRecipe(new ItemStack(BEItems.pillow, 1), new Object[] {"FF",
         "FF", 'F', Item.feather});
 
+        ModLoader.AddRecipe(new ItemStack(BEItems.dart, 8), new Object[] {" F",
+        "R ", 'F', Item.flint, 'R', BEItems.rushStock});
+
         CraftingManager.getInstance().addRecipe(new ItemStack(Item.bed, 1), new Object[] {
             "P##", "XIX", Character.valueOf('#'), Block.cloth, Character.valueOf('X'), Block.planks
         , 'P', BEItems.pillow, 'I', Item.ingotIron});
 
 		if (BetaExpansion.debug){
 			System.out.println("Loading betaexpansion debug recipes...");
-			ModLoader.AddShapelessRecipe(new ItemStack(Item.arrow, 64), new Object[] {Block.dirt});
+			ModLoader.AddShapelessRecipe(new ItemStack(Item.bow, 1), new Object[] {Block.dirt});
 		}
 		
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);

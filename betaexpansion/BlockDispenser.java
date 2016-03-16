@@ -175,7 +175,13 @@ public class BlockDispenser extends BlockContainer
                     ((EntitySnowball)entitysnowball).setSnowballHeading(i1, 0.10000000149011611D, j1, 1.1F, 6F);
                     world.entityJoinedWorld(entitysnowball);
                     world.func_28106_e(1002, i, j, k, 0);
-                } else
+                }else
+                if (itemstack.itemID == BEItems.dart.shiftedIndex){
+                    EntityDart entityarrow = new EntityDart(world, d, d1, d2);
+                    ((EntityDart)entityarrow).setProjectileHeading(i1, 0.10000000149011611D, j1, 1.1F, 6F);
+                    world.entityJoinedWorld(entityarrow);
+                    world.func_28106_e(1002, i, j, k, 0);
+                }else
                 {
                     EntityItem entityitem = new EntityItem(world, d, d1 - 0.29999999999999999D, d2, itemstack);
                     double d3 = random.nextDouble() * 0.10000000000000001D + 0.20000000000000001D;

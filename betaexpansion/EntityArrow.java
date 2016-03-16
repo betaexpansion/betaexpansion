@@ -34,15 +34,4 @@ public class EntityArrow extends EntityProjectile
             item = new ItemStack(Item.arrow, 1);
         }
     }
-
-    private int xTile;
-    private int yTile;
-    private int zTile;
-    private int inTile;
-    private int field_28019_h;
-    private boolean inGround;
-    public int arrowShake;
-    public EntityLiving owner;
-    private int ticksInGround;
-    private int ticksInAir;
 }
