@@ -21,7 +21,7 @@ public class BlockGravel extends BlockSand
     {
         if(random.nextInt(10) == 0)
         {
-            if (random.nextInt(1) == 0){
+            if (random.nextInt(10) == 0){
                 if (random.nextInt(2) == 0){
                     return Item.gunpowder.shiftedIndex;
                 }

@@ -52,6 +52,7 @@ public class RenderManager
         entityRenderMap.put(net.minecraft.src.Entity.class, new RenderEntity());
         entityRenderMap.put(net.minecraft.src.EntityPainting.class, new RenderPainting());
         entityRenderMap.put(net.minecraft.src.EntityArrow.class, new RenderArrow());
+        entityRenderMap.put(net.minecraft.src.EntityDart.class, new RenderDart());
         entityRenderMap.put(net.minecraft.src.EntitySnowball.class, new RenderSnowball(Item.snowball.getIconFromDamage(0)));
         entityRenderMap.put(net.minecraft.src.EntityEgg.class, new RenderSnowball(Item.egg.getIconFromDamage(0)));
         entityRenderMap.put(net.minecraft.src.EntityFireball.class, new RenderFireball());

@@ -75,11 +75,11 @@ public class BEItems {
 		
 		spyglass = new ItemSpyglass(20 + offset, 19, 2, "Spyglass");
 		
-        pillow = new ModItem(21 + offset, 0, 0, "Pillow");
+        pillow = new ModItem(21 + offset, 17, 4, "Pillow");
 
-        rushStock = new ModItem(22 + offset, 0, 0, "Rush Stock");
+        rushStock = new ModItem(22 + offset, 18, 4, "Rush Stock");
 
-        dart = new ModItem(23 + offset, 0, 0, "Dart");
+        dart = new ModItem(23 + offset, 16, 2, "Dart");
 
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);
 	}
