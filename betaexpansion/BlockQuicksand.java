@@ -6,6 +6,7 @@ public class BlockQuicksand extends ModBlock
 {
 	public BlockQuicksand(int i, int j, String name){
 		super(i, j, Material.sand, name);
+        setSandLike();
 	}
 
     public void onEntityCollidedWithBlock(World world, int i, int j, int k,
