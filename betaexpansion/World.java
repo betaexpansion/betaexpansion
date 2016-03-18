@@ -1112,6 +1112,7 @@ public class World
 
     public List getCollidingBoundingBoxes(Entity entity, AxisAlignedBB axisalignedbb)
     {
+        boolean isItem = entity instanceof EntityItem;
         collidingBoundingBoxes.clear();
         int i = MathHelper.floor_double(axisalignedbb.minX);
         int j = MathHelper.floor_double(axisalignedbb.maxX + 1.0D);
@@ -1130,7 +1131,8 @@ public class World
                 for(int i2 = k - 1; i2 < l; i2++)
                 {
                     Block block = Block.blocksList[getBlockId(k1, i2, l1)];
-                    if(block != null)
+                    if(block != null && 
+                       (!isItem || block.blockID != BEBlocks.net.blockID))
                     {
                         block.getCollidingBoundingBoxes(this, k1, i2, l1, axisalignedbb, collidingBoundingBoxes);
                     }

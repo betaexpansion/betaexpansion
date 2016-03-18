@@ -10,6 +10,7 @@ public class BlockNet extends ModBlock
         setBlockBounds(0.0f, 14.0f / 16.0f, 0.0f, 
                        1.0f, 15.0f / 16.0f, 1.0f);
         setTickOnLoad(true);
+		setHardness(0.5F).setStepSound(soundGrassFootstep);
 	}
 
     public boolean isOpaqueCube()

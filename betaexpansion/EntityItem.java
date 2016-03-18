@@ -69,7 +69,7 @@ public class EntityItem extends Entity
             motionZ = (rand.nextFloat() - rand.nextFloat()) * 0.2F;
             worldObj.playSoundAtEntity(this, "random.fizz", 0.4F, 2.0F + rand.nextFloat() * 0.4F);
         }
-        pushOutOfBlocks(posX, (boundingBox.minY + boundingBox.maxY) / 2D, posZ);
+    //    pushOutOfBlocks(posX, (boundingBox.minY + boundingBox.maxY) / 2D, posZ);
         moveEntity(motionX, motionY, motionZ);
         float f = 0.98F;
         if(onGround)
@@ -100,7 +100,6 @@ public class EntityItem extends Entity
     {
         return worldObj.handleMaterialAcceleration(boundingBox, Material.water, this);
     }
-
     protected void dealFireDamage(int i)
     {
         attackEntityFrom(null, i);

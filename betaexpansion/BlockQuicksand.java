@@ -26,16 +26,4 @@ public class BlockQuicksand extends ModBlock
     {
         return null;
     }
-
-/*
-    public int getRenderType()
-    {
-        return 1;
-    }
-
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-*/
 }
