@@ -18,28 +18,28 @@ public class BEWorldgen {
 			for (int y = 1; y < 128; y++){
 				for (int z = 0; z < 16; z++){
 					if (y > 50){
-                        if (world.getWorldChunkManager().
-                            getBiomeGenAt(x + (i * 16), z + (j * 16)).
-                            biomeName.
-                            equals(BiomeGenBase.desert.biomeName) || 
-                            world.getWorldChunkManager().
-                            getBiomeGenAt(x + (i * 16), z + (j * 16)).
-                            biomeName.
-                            equals(BiomeGenBase.rainforest.biomeName) ||
-                            world.getWorldChunkManager().
-                            getBiomeGenAt(x + (i * 16), z + (j * 16)).
-                            biomeName.
-                            equals(BiomeGenBase.iceDesert.biomeName)){
-                                if (world.rand.nextInt(10000) == 0){
-                                    new WorldGenQS(BEBlocks.
-                                                            quickSand.
-                                                            blockID,
-                                                   20).
+                        if (world.rand.nextInt(10000) == 0){
+                            if (world.getWorldChunkManager().
+                                getBiomeGenAt(x + (i * 16), z + (j * 16)).
+                                biomeName.
+                                equals(BiomeGenBase.desert.biomeName) || 
+                                world.getWorldChunkManager().
+                                getBiomeGenAt(x + (i * 16), z + (j * 16)).
+                                biomeName.
+                                equals(BiomeGenBase.rainforest.biomeName) ||
+                                world.getWorldChunkManager().
+                                getBiomeGenAt(x + (i * 16), z + (j * 16)).
+                                biomeName.
+                                equals(BiomeGenBase.iceDesert.biomeName)){
+                                        new WorldGenQS(BEBlocks.
+                                                                quickSand.
+                                                                blockID,
+                                                       20).
                                                    generate(world,
                                                    world.rand,
                                                    x + (i * 16), y,
                                                    z + (j * 16));
-                                }
+                                    }
                             }
 						
                         
