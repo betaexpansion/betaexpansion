@@ -1,7 +1,12 @@
-./bin
+/bin
 jars
 src
 cleansrc
+
+build
+reobf
+
+mcp/bin
 
 *.pyc
 
