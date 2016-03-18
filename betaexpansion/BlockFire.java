@@ -178,6 +178,23 @@ public class BlockFire extends Block
                 world.setBlockAndMetadataWithNotify(i, j, k, blockID, k1);
             } else
             {
+                if (world.getBlockId(i, j, k) == Block.wood.blockID){
+                    float f1 = 0.7F;
+                    float f2 = world.rand.nextFloat() * f1 + 
+                               (1.0F - f1) * 0.5F;
+                    float f3 = world.rand.nextFloat() * f1 + 
+                               (1.0F - f1) * 0.5F;
+                    float f4 = world.rand.nextFloat() * f1 + 
+                               (1.0F - f1) * 0.5F;
+                    ItemStack item = new ItemStack(Item.coal, 1, 1);
+                    EntityItem entityitem = new EntityItem(world, 
+                                                          (float)i + f2, 
+                                                          (float)j + f3, 
+                                                          (float)k + f4, 
+                                                          item);
+                    entityitem.delayBeforeCanPickup = 10;
+                    world.entityJoinedWorld(entityitem);
+                }
                 world.setBlockWithNotify(i, j, k, 0);
             }
             if(flag)
