@@ -440,8 +440,19 @@ public abstract class EntityLiving extends Entity
         int i = (int)Math.ceil(f - 3F);
         if(i > 0)
         {
-            attackEntityFrom(null, i);
             int j = worldObj.getBlockId(MathHelper.floor_double(posX), MathHelper.floor_double(posY - 0.20000000298023224D - (double)yOffset), MathHelper.floor_double(posZ));
+            if (j != BEBlocks.net.blockID){
+                attackEntityFrom(null, i);
+            } else {
+                int x = MathHelper.floor_double(posX);
+                int y = MathHelper.floor_double(posY - 0.20 - yOffset);
+                int z = MathHelper.floor_double(posZ);
+                if (worldObj.rand.nextInt(256) < i)
+                {
+                    worldObj.setBlockWithNotify(x, y, z, 0);
+            worldObj.playSoundAtEntity(this, "random.bow", 1.0F, 1.0F / (worldObj.rand.nextFloat() * 0.4F + 0.8F));
+                }
+            }
             if(j > 0)
             {
                 StepSound stepsound = Block.blocksList[j].stepSound;
