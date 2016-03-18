@@ -22,7 +22,11 @@ public class BEUpdate {
 		if (minecraft.thePlayer == null){
 			return;
 		}
-		
+
+        if (ItemFood.cooldown > 0){
+            ItemFood.cooldown--;
+        }
+
 		frostbite();
 		dynamicLight();
 		
