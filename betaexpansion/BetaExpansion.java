@@ -2,7 +2,7 @@ package net.minecraft.src;
 
 public class BetaExpansion {
 	
-	public static String vn = "1.2_dev";
+	public static String vn = "1.2";
 	public static boolean debug = false;
 
 	public static void init(){
