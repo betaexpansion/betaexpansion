@@ -124,25 +124,26 @@ public class TileEntityPiston extends TileEntity
                 for(Iterator iterator = field_31018_m.iterator(); iterator.hasNext(); entity.moveEntity(f1 * (float)PistonBlockTextures.field_31056_b[field_31025_c], f1 * (float)PistonBlockTextures.field_31059_c[field_31025_c], f1 * (float)PistonBlockTextures.field_31058_d[field_31025_c]))
                 {
                     entity = (Entity)iterator.next();
+                    final double power = 1.25d;
                     if (launcher){
                         switch (storedMetadata){
                         case 0: // DOWN
-                            entity.motionZ -= 1.0d;
+                            entity.motionZ -= power;
                             break;
                         case 1: // UP
-                            entity.motionY += 1.0d;
+                            entity.motionY += power;
                             break;
                         case 2: // -Z
-                            entity.motionZ -= 1.0d;
+                            entity.motionZ -= power;
                             break;
                         case 3: // +Z
-                            entity.motionZ += 1.0d;
+                            entity.motionZ += power;
                             break;
                         case 4: // -X
-                            entity.motionX -= 1.0d;
+                            entity.motionX -= power;
                             break;
                         case 5: // +X
-                            entity.motionX += 1.0d;
+                            entity.motionX += power;
                             break;
                         }
                     }

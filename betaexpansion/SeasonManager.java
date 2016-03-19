@@ -30,7 +30,7 @@ public class SeasonManager {
 			return;
 		}
 	
-		if (minecraft.theWorld.worldInfo.getWorldTime() % 24000L == 1){
+		if (minecraft.theWorld.worldInfo.getWorldTime() % 24000L == 10){
 			minecraft.theWorld.worldInfo.day++;
 			if (minecraft.theWorld.worldInfo.day >= Math.pow(2, minecraft.theWorld.worldInfo.timeScale)){
 				season++;
