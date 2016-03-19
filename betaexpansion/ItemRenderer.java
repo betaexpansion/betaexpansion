@@ -349,10 +349,10 @@ public class ItemRenderer
         float f5 = 1.0F;
         float f6 = -0.5F;
         float f7 = 0.0078125F;
-        float f8 = (float)(i % 16) / 256F - f7;
-        float f9 = ((float)(i % 16) + 15.99F) / 256F + f7;
-        float f10 = (float)(i / 16) / 256F - f7;
-        float f11 = ((float)(i / 16) + 15.99F) / 256F + f7;
+        float f8 = (float)(i % 64) / 1024F - f7;
+        float f9 = ((float)(i % 64) + 15.99F) / 1024F + f7;
+        float f10 = (float)(i / 64) / 256F - f7;
+        float f11 = ((float)(i / 64) + 15.99F) / 1024F + f7;
         tessellator.startDrawingQuads();
         tessellator.addVertexWithUV(f2, f4, f6, f9, f11);
         tessellator.addVertexWithUV(f3, f4, f6, f8, f11);
