@@ -185,6 +185,7 @@ public class BEBlocks {
 		ModLoader.AddName(launcher, "Launcher");
 		ModLoader.RegisterBlock(launcher);
         launcher.disableNeighborNotifyOnMetadataChange();
+        launcher.blockIndexInTexture = Util.tex(20, 6);
 
 		BlockStone.texInit();
 		Item.itemsList[Block.stone.blockID] = new ItemStone(Block.stone.blockID - 256);

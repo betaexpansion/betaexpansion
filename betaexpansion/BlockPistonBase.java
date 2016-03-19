@@ -39,9 +39,6 @@ public class BlockPistonBase extends Block
 
     public int getBlockTextureFromSideAndMetadata(int i, int j)
     {
-        if (isLauncher){
-            return Util.tex(19, 6);
-        }
         int k = func_31044_d(j);
         if(k > 5)
         {
@@ -476,6 +473,6 @@ public class BlockPistonBase extends Block
     }
 
     private boolean isSticky;
-    private boolean isLauncher;
+    protected boolean isLauncher;
     private boolean field_31048_b;
 }

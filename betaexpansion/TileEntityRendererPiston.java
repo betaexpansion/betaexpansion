@@ -48,6 +48,9 @@ public class TileEntityRendererPiston extends TileEntitySpecialRenderer
             if(tileentitypiston.func_31012_k() && !tileentitypiston.func_31015_b())
             {
                 Block.pistonExtension.func_31052_a_(((BlockPistonBase)block).func_31040_i());
+                if (((BlockPistonBase)block).isLauncher){
+                    Block.pistonExtension.func_31052_a_(0);
+                }
                 field_31071_b.func_31079_a(Block.pistonExtension, tileentitypiston.xCoord, tileentitypiston.yCoord, tileentitypiston.zCoord, tileentitypiston.func_31008_a(f) < 0.5F);
                 Block.pistonExtension.func_31051_a();
                 tessellator.setTranslationD((float)d - (float)tileentitypiston.xCoord, (float)d1 - (float)tileentitypiston.yCoord, (float)d2 - (float)tileentitypiston.zCoord);
