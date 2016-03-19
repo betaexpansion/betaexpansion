@@ -118,7 +118,10 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
 		ModLoader.AddShapelessRecipe(new ItemStack(BEBlocks.appleSapling), new Object[]{Item.appleRed});
 		
         ModLoader.AddShapelessRecipe(new ItemStack(Item.silk, 4), new Object[]{Block.cloth});
-		
+	
+        ModLoader.AddRecipe(new ItemStack(BEBlocks.launcher, 1),
+        new Object[] {"O", "P", 'O', BEItems.pillow, 'P', Block.pistonBase});
+
 		ModLoader.AddRecipe(new ItemStack(BEItems.spyglass, 1), new Object[] {"IGI","W W","IGI", 'W', Block.planks, 'I', Item.ingotIron, 'G', Block.glass});
 		
         ModLoader.AddRecipe(new ItemStack(BEBlocks.ropeLadder, 4), new Object[] {"S S","SWS","S S", 'S', Item.silk, 'W', Item.stick});
@@ -138,7 +141,7 @@ ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
 
 		if (BetaExpansion.debug){
 			System.out.println("Loading betaexpansion debug recipes...");
-			ModLoader.AddShapelessRecipe(new ItemStack(Item.flintAndSteel, 64), new Object[] {Block.dirt});
+			ModLoader.AddShapelessRecipe(new ItemStack(Block.pistonBase, 64), new Object[] {Block.dirt});
 		}
 		
 		System.out.println(Ansi.GREEN+"Done."+Ansi.RESET);

@@ -70,7 +70,9 @@ public class BEBlocks {
     public static BlockNet net;
 
     public static BlockQuicksand quickSand;
-	
+
+    public static BlockPistonBase launcher; 
+
 	public static void init(){
 		System.out.println(Ansi.BLACK+"Loading betaexpansion blocks..."+Ansi.RESET);
 		
@@ -177,6 +179,12 @@ public class BEBlocks {
         net = new BlockNet(46, Util.tex(18, 6), "Net");
 
         quickSand = new BlockQuicksand(47, Util.tex(20, 7), "Quicksand");
+        
+        launcher = new BlockPistonBase(48 + 100, 106, false, true);
+        launcher.setBlockName("launcher");
+		ModLoader.AddName(launcher, "Launcher");
+		ModLoader.RegisterBlock(launcher);
+        launcher.disableNeighborNotifyOnMetadataChange();
 
 		BlockStone.texInit();
 		Item.itemsList[Block.stone.blockID] = new ItemStone(Block.stone.blockID - 256);

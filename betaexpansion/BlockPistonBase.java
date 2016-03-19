@@ -17,19 +17,31 @@ public class BlockPistonBase extends Block
 
     public BlockPistonBase(int i, int j, boolean flag)
     {
+        this(i, j, flag, false);
+    }
+    
+    public BlockPistonBase(int i, int j, boolean flag, boolean flag2)
+    {
         super(i, j, Material.field_31067_B);
         isSticky = flag;
+        isLauncher = flag2;
         setStepSound(soundStoneFootstep);
         setHardness(0.5F);
     }
 
     public int func_31040_i()
     {
+        if (isLauncher){
+            return Util.tex(20, 6);
+        }
         return !isSticky ? Util.normalizeTexture(107) : Util.normalizeTexture(106);
     }
 
     public int getBlockTextureFromSideAndMetadata(int i, int j)
     {
+        if (isLauncher){
+            return Util.tex(19, 6);
+        }
         int k = func_31044_d(j);
         if(k > 5)
         {
@@ -182,7 +194,7 @@ public class BlockPistonBase extends Block
                 ((TileEntityPiston)tileentity).func_31011_l();
             }
             world.setBlockAndMetadata(i, j, k, Block.pistonMoving.blockID, j1);
-            world.setBlockTileEntity(i, j, k, BlockPistonMoving.func_31036_a(blockID, j1, j1, false, true));
+            world.setBlockTileEntity(i, j, k, BlockPistonMoving.func_31036_a(blockID, j1, j1, false, true, isLauncher));
             if(isSticky)
             {
                 int k1 = i + PistonBlockTextures.field_31056_b[j1] * 2;
@@ -215,7 +227,7 @@ public class BlockPistonBase extends Block
                     j += PistonBlockTextures.field_31059_c[j1];
                     k += PistonBlockTextures.field_31058_d[j1];
                     world.setBlockAndMetadata(i, j, k, Block.pistonMoving.blockID, k2);
-                    world.setBlockTileEntity(i, j, k, BlockPistonMoving.func_31036_a(j2, k2, j1, false, false));
+                    world.setBlockTileEntity(i, j, k, BlockPistonMoving.func_31036_a(j2, k2, j1, false, false, isLauncher));
                 } else
                 if(!flag)
                 {
@@ -450,11 +462,11 @@ public class BlockPistonBase extends Block
             if(i3 == blockID && i2 == i && k2 == j && l2 == k)
             {
                 world.setBlockAndMetadata(i1, j1, k1, Block.pistonMoving.blockID, l | (isSticky ? 8 : 0));
-                world.setBlockTileEntity(i1, j1, k1, BlockPistonMoving.func_31036_a(Block.pistonExtension.blockID, l | (isSticky ? 8 : 0), l, true, false));
+                world.setBlockTileEntity(i1, j1, k1, BlockPistonMoving.func_31036_a(Block.pistonExtension.blockID, l | (isSticky ? 8 : 0), l, true, false, isLauncher));
             } else
             {
                 world.setBlockAndMetadata(i1, j1, k1, Block.pistonMoving.blockID, j3);
-                world.setBlockTileEntity(i1, j1, k1, BlockPistonMoving.func_31036_a(i3, j3, l, true, false));
+                world.setBlockTileEntity(i1, j1, k1, BlockPistonMoving.func_31036_a(i3, j3, l, true, false, isLauncher));
             }
             i1 = i2;
             j1 = k2;
@@ -464,5 +476,6 @@ public class BlockPistonBase extends Block
     }
 
     private boolean isSticky;
+    private boolean isLauncher;
     private boolean field_31048_b;
 }
