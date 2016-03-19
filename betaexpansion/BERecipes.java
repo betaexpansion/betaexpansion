@@ -109,7 +109,7 @@ public class BERecipes {
             "RR", "RR", Character.valueOf('R'), BEItems.rushStock
  });
         
-ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 16), new Object[] {
+ModLoader.AddRecipe(new ItemStack(BEBlocks.thatch, 4), new Object[] {
             "RR", "RR", Character.valueOf('R'), Item.wheat
  });
 		
